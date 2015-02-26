@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="CI Test" default="production">
+    
+    <target name="development" depends="test">
+        <echo msg="Build para ambiente de desenvolvimento executado com sucesso!" />
+    </target>
+    
+    <target name="production" depends="test">
+        <echo msg="Build para ambiente de produção executado com sucesso!" />
+        <echo msg="Pronto!"/>
+    </target>
+    
+    <target name="test">
+        <exec command="${project.basedir}/app/Console/cake test app AllTests" checkreturn="true" />
+    </target>
+    
+</project>
